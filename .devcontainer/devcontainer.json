@@ -1,5 +1,5 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-${templateOption:imageVariant}",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node",
 
   // 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
   "features": {
