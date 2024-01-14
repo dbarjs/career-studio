@@ -1,0 +1,6 @@
+// https://code.visualstudio.com/docs/devcontainers/containers
+// https://containers.dev/implementors/json_reference/
+{
+  "name": "cs-devcontainer",
+  "image": "ghcr.io/dbarjs/devcontainer-templates/vue:latest"
+}
