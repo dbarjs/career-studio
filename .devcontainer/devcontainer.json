@@ -1,6 +1,132 @@
-// https://code.visualstudio.com/docs/devcontainers/containers
-// https://containers.dev/implementors/json_reference/
 {
-  "name": "cs-devcontainer",
-  "image": "ghcr.io/dbarjs/devcontainer-templates/vue:latest"
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-${templateOption:imageVariant}",
+
+  // 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+
+  // 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // 👇 Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "echo '${templateOption:favorite}' > /tmp/color.txt",
+
+  // 👇 Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Essential
+        "aaron-bond.better-comments",
+        "eamodio.gitlens",
+        "editorconfig.editorconfig",
+        "GitHub.copilot",
+        "github.vscode-github-actions",
+        "johnsoncodehk.vscode-tsconfig-helper",
+        "ms-azuretools.vscode-docker",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens",
+        "naumovs.color-highlight",
+        "GitHub.vscode-pull-request-github",
+        "antfu.iconify",
+        "antfu.open-in-github-button",
+        "antfu.where-am-i",
+
+        // Stack
+        "antfu.unocss",
+        "antfu.vite",
+        "dbaeumer.vscode-eslint",
+        "Vue.volar",
+        "-lokalise.i18n-ally",
+
+        // Optional
+        "-antfu.browse-lite",
+        "-antfu.slidev"
+      ],
+      "settings": {
+
+        // ========== Lint & Format ==========
+        "editor.formatOnSave": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "files.eol": "\n",
+        "files.insertFinalNewline": true,
+
+        // ========== Extension configs ==========
+        "cSpell.enabled": false,
+        "eslint.codeAction.showDocumentation": {
+          "enable": true
+        },
+        "eslint.experimental.useFlatConfig": true,
+        "eslint.quiet": true,
+        // Silent the stylistic rules in you IDE, but still auto fix them
+        "eslint.rules.customizations": [
+          {
+            "rule": "style/*",
+            "severity": "off"
+          },
+          {
+            "rule": "format/*",
+            "severity": "off"
+          },
+          {
+            "rule": "*-indent",
+            "severity": "off"
+          },
+          {
+            "rule": "*-spacing",
+            "severity": "off"
+          },
+          {
+            "rule": "*-spaces",
+            "severity": "off"
+          },
+          {
+            "rule": "*-order",
+            "severity": "off"
+          },
+          {
+            "rule": "*-dangle",
+            "severity": "off"
+          },
+          {
+            "rule": "*-newline",
+            "severity": "off"
+          },
+          {
+            "rule": "*quotes",
+            "severity": "off"
+          },
+          {
+            "rule": "*semi",
+            "severity": "off"
+          }
+        ],
+        "eslint.validate": [
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+          "vue",
+          "html",
+          "markdown",
+          "json",
+          "jsonc",
+          "yaml",
+          "toml"
+        ],
+        "i18n-ally.autoDetection": false,
+        "i18n-ally.displayLanguage": "en",
+        "prettier.enable": false,
+        "prettier.printWidth": 200,
+        "prettier.semi": false,
+        "prettier.singleQuote": true
+      }
+    }
+  },
+
+  // Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "node"
 }
