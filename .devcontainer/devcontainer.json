@@ -1,17 +1,21 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/javascript-node",
+  "name": "Vue Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20-bookworm",
 
   // 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
   "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
 
   // 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
+  "forwardPorts": [
+    3000
+  ],
 
   // 👇 Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "echo '${templateOption:favorite}' > /tmp/color.txt",
+  "postCreateCommand": "npm install -g @devcontainers/cli",
 
   // 👇 Configure tool-specific properties.
   "customizations": {
@@ -25,27 +29,28 @@
         "github.vscode-github-actions",
         "johnsoncodehk.vscode-tsconfig-helper",
         "ms-azuretools.vscode-docker",
-        "streetsidesoftware.code-spell-checker",
         "usernamehw.errorlens",
         "naumovs.color-highlight",
         "GitHub.vscode-pull-request-github",
         "antfu.iconify",
-        "antfu.open-in-github-button",
-        "antfu.where-am-i",
-
+        
         // Stack
         "antfu.unocss",
         "antfu.vite",
         "dbaeumer.vscode-eslint",
         "Vue.volar",
-        "-lokalise.i18n-ally",
-
-        // Optional
-        "-antfu.browse-lite",
-        "-antfu.slidev"
+        "lokalise.i18n-ally",
+        
+        // Extras
+        "antfu.browse-lite",
+        "antfu.slidev",
+        "streetsidesoftware.code-spell-checker",
+        "antfu.open-in-github-button",
+        "antfu.where-am-i",
+        "antfu.file-nesting"
       ],
       "settings": {
-
+        
         // ========== Lint & Format ==========
         "editor.formatOnSave": false,
         "editor.insertSpaces": true,
@@ -124,8 +129,8 @@
         "prettier.singleQuote": true
       }
     }
-  }
+  },
 
-  // Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-  // "remoteUser": "node"
+  // 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "node"
 }
