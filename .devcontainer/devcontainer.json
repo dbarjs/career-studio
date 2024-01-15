@@ -15,7 +15,9 @@
   ],
 
   // 👇 Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "npm install -g @devcontainers/cli",
+  "postCreateCommand": [
+    "npm i -g @devcontainers/cli @antfu/ni"
+  ],
 
   // 👇 Configure tool-specific properties.
   "customizations": {
@@ -33,14 +35,15 @@
         "naumovs.color-highlight",
         "GitHub.vscode-pull-request-github",
         "antfu.iconify",
-        
+        "esbenp.prettier-vscode",
+
         // Stack
         "antfu.unocss",
         "antfu.vite",
         "dbaeumer.vscode-eslint",
         "Vue.volar",
         "lokalise.i18n-ally",
-        
+
         // Extras
         "antfu.browse-lite",
         "antfu.slidev",
@@ -50,7 +53,7 @@
         "antfu.file-nesting"
       ],
       "settings": {
-        
+
         // ========== Lint & Format ==========
         "editor.formatOnSave": false,
         "editor.insertSpaces": true,
@@ -129,8 +132,8 @@
         "prettier.singleQuote": true
       }
     }
-  },
+  }
 
   // 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  "remoteUser": "node"
+  // "remoteUser": "root"
 }
