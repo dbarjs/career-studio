@@ -4,33 +4,21 @@ import { execaSync } from 'execa'
 export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
-    '@unocss/nuxt',
-    '@nuxtjs/color-mode',
-    'floating-vue/nuxt',
-    '@nuxtjs/seo',
-    'nuxt-icon',
     '@nuxt/ui',
   ],
+
+  ui: {
+    global: true,
+    icons: ['logos', 'heroicons'],
+  },
+
   colorMode: {
-    classSuffix: '',
+    preference: 'dark',
   },
-  site: {
-    url: 'https://learn-dev.nuxt.com',
-  },
-  ogImage: {
-    defaults: {
-      component: 'NuxtSeo',
-      props: {
-        colorMode: 'dark',
-      },
-    },
-    componentOptions: {
-      global: true,
-    },
-  },
+
   app: {
     head: {
-      titleTemplate: '%s - Nuxt Tutorial',
+      titleTemplate: '%s | Career Studio',
       htmlAttrs: {
         lang: 'en-US',
       },
@@ -39,18 +27,15 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   typescript: {
     includeWorkspace: true,
-    tsConfig: {
-      include: [
-        '../content/**/.template/**/*.ts',
-      ],
-    },
   },
 
   features: {
     inlineStyles: false,
   },
+
   runtimeConfig: {
     public: {
       buildTime: Date.now(),
@@ -65,21 +50,19 @@ export default defineNuxtConfig({
       },
     },
   },
+
   devtools: {
     enabled: true,
+    disableAuthorization: true,
   },
+
   vite: {
     build: {
       minify: 'esbuild',
       cssMinify: 'esbuild',
     },
-    server: {
-      headers: {
-        'Cross-Origin-Embedder-Policy': 'require-corp',
-        'Cross-Origin-Opener-Policy': 'same-origin',
-      },
-    },
   },
+
   vue: {
     defineModel: true,
   },

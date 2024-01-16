@@ -1,6 +1,11 @@
 {
   "name": "Vue Dev Container",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:20-bookworm",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "VARIANT": "20-bookworm"
+    }
+  },
 
   // 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
   "features": {
@@ -10,14 +15,12 @@
   },
 
   // 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [
-    3000
-  ],
+  // "forwardPorts": [
+  //   3000
+  // ],
 
   // 👇 Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": [
-    "npm i -g @devcontainers/cli @antfu/ni"
-  ],
+  // "postCreateCommand": "npm install -g @devcontainers/cli",
 
   // 👇 Configure tool-specific properties.
   "customizations": {
@@ -38,6 +41,7 @@
         "esbenp.prettier-vscode",
 
         // Stack
+        "bradlc.vscode-tailwindcss",
         "antfu.unocss",
         "antfu.vite",
         "dbaeumer.vscode-eslint",
@@ -130,10 +134,16 @@
         "prettier.printWidth": 200,
         "prettier.semi": false,
         "prettier.singleQuote": true
+
       }
     }
-  }
+  },
 
-  // 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
+  // 👇 Select current user. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "node",
+
+  // Mount the zsh history file to share it between sessions.
+  "mounts": [
+    "source=devcontainer-zshhistory,target=/commandhistory,type=volume"
+  ]
 }

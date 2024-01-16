@@ -1,4 +1,23 @@
 {
-  // Enable the ESlint flat config support
-  "eslint.experimental.useFlatConfig": true
+  // https://github.com/antfu/starter-ts/blob/main/.vscode/settings.json
+  "eslint.experimental.useFlatConfig": true,
+
+  // https://ui.nuxt.com/getting-started/installation#intellisense
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.experimental.configFile": "tailwind.config.ts",
+  "tailwindCSS.experimental.classRegex": [
+    ["ui:\\s*{([^)]*)\\s*}", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["/\\*ui\\*/\\s*{([^;]*)}", ":\\s*[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "ui"
+  ]
 }
