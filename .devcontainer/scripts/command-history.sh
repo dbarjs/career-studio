@@ -35,7 +35,7 @@ config_bash() {
   fi
 
   # add history file location to bash config
-  SNIPPET="export HISTFILE=$COMMAND_HISTORY_LOCATION/.bash_history "
+  SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=$COMMAND_HISTORY_LOCATION/.bash_history "
   echo "$SNIPPET" >> "$BASH_CONFIG"
 }
 

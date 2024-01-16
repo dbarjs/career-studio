@@ -14,9 +14,6 @@ scripts=("config-zsh.sh" "command-history.sh")
 
 echo "Running scripts for user: $USERNAME"
 
-echo "$@"
-e
-
 # Loop through the scripts and run them
 for script in "${scripts[@]}"
 do
