@@ -55,66 +55,69 @@ View types:
 
 # Example
 
-users:
+- users:
 
-- $dbarjs
+  - $dbarjs:
+    username: dbarjs
+    email: foo@a.com
+    password: 123456
 
-* careers:
+    careers:
 
-  - $dbarjs-pro-career:
-    owner: $dbarjs
+    - $dbarjs-pro-career:
+      owner: $dbarjs
 
-    - links:
+      - links:
 
-      - $tfy-senior-software-engineer-js-skill
-        type: develops
-        period:
-        from: 0
-        to: 50
+        - $tfy-senior-software-engineer-js-skill
+          type: develops
+          period:
+          from: 0
+          to: 50
 
-    - elements:
+      - elements:
 
-      - $js-skill:
-        type: skill
-        title: JavaScript
-        level: 5
-        years: 10
-        description: I love JavaScript
-        tags: [js, javascript, nodejs, node, react]
+        - $js-skill:
+          type: skill
+          title: JavaScript
+          level: 5
+          years: 10
+          description: I love JavaScript
+          tags: [js, javascript, nodejs, node, react]
 
-        - variants:
-          - $js-skill-variant-1
-            type: variant
-            level: 5
-            years: 10
-            description: I love JavaScript
-            tags: [js, javascript, nodejs, node, react]
-            from: 0
-            to: 50
+          - variants:
+            - $js-skill-variant-1
+              type: variant
+              level: 5
+              years: 10
+              description: I love JavaScript
+              tags: [js, javascript, nodejs, node, react]
+              from: 0
+              to: 50
 
-      - $css-skill
-        type: skill
-        title: CSS
-        level: 5
-        years: 10
-        description: I love CSS
-        tags: [css, css3, sass, less]
+        - $css-skill
+          type: skill
+          title: CSS
+          level: 5
+          years: 10
+          description: I love CSS
+          tags: [css, css3, sass, less]
 
-      - $leadership-skill
-        type: skill
-        title: Leadership
-        level: 5
-        years: 10
-        description: I love leadership
-        tags: [leadership, management, team, team management]
+        - $leadership-skill
+          type: skill
+          title: Leadership
+          level: 5
+          years: 10
+          description: I love leadership
+          tags: [leadership, management, team, team management]
 
-      - $tfy-senior-software-engineer
-          type: position
-          title: Senior Software Engineer
-          company: Talentify
-          location: Paris, France
-          from: 2018-01-01
-          to: 2019-01-01
-          description: I was a senior software engineer at Talentify
-          tags: [tfy, the family, startup, startup studio]
-          links: [$tfy-senior-software-engineer-js-skill]
+        - $tfy-senior-software-engineer
+            type: position
+            title: Senior Software Engineer
+            company: Tfy
+            location: Paris, France
+            from: 2018-01-01
+            to: 2019-01-01
+            description: I was a senior software engineer at Tfy
+            tags: [tfy, the family, startup, startup studio]
+            links: [$tfy-senior-software-engineer-js-skill]
