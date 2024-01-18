@@ -5,7 +5,5 @@ useHead({
 </script>
 
 <template>
-  <UContainer>
-    <p>test</p>
-  </UContainer>
+  <Header />
 </template>
