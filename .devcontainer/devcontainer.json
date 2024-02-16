@@ -4,12 +4,13 @@
 
   // 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
   "features": {
-    "ghcr.io/dbarjs/devcontainer-features/zsh:0.1.2": {
-      "username": "node"
-    },
     "ghcr.io/devcontainers/features/git:1": {
       // 👇 Uncomment to use latest git version
       // "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": { },
+    "ghcr.io/dbarjs/devcontainer-features/zsh:latest": {
+      "username": "node"
     }
   },
 
