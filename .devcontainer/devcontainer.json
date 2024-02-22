@@ -9,9 +9,7 @@
       // "version": "latest"
     },
     "ghcr.io/devcontainers/features/github-cli:1": { },
-    "ghcr.io/dbarjs/devcontainer-features/zsh:latest": {
-      "username": "node"
-    }
+    "ghcr.io/dbarjs/devcontainer-features/zsh:latest": { }
   },
 
   // 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -20,7 +18,7 @@
   ],
 
   // 👇 Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "npm install -g @devcontainers/cli",
+  "postCreateCommand": "npm install -g @devcontainers/cli @antfu/ni",
 
   // 👇 Configure tool-specific properties.
   "customizations": {
